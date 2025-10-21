@@ -1,57 +1,61 @@
-# Express Routing Lab — Week 4
+# 04_express_33828139 - Express Routing Lab (Week 4)
 
-Starter link (VM / course site)
-- Base: https://www.doc.gold.ac.uk/usr/201/
+This application is a simple Node.js server built with the Express framework. It demonstrates the core routing capabilities of Express as required for Lab 4.
 
-If the app is deployed under that base URL, append the routes below to it. Locally the server runs on port 8000 (http://localhost:8000).
+The project successfully implements:
+* [cite_start]Basic static routes (e.g., `/`, `/about`, `/contact`, `/date`)[cite: 208, 299, 314, 317].
+* [cite_start]A **parameterised route** (`/welcome/:name`)[cite: 359].
+* [cite_start]A **chained handler** (`/chain`)[cite: 361].
+* [cite_start]A route that **serves a static file** (`/file`)[cite: 362].
 
-What this app is
-- An app that demonstrates routing and the three extension tasks from the assignment:
-  - Parameterised route: /welcome/:name
-  - Chained handlers: /chain
-  - Serving a static HTML file: /file
-- Routes and logic are implemented in `main.js`. The server is started from `index.js`. `a.html` is served by the `/file` route.
+## Technologies Used
 
-All routes For My VM
-- https://www.doc.gold.ac.uk/usr/201/  
-- https://www.doc.gold.ac.uk/usr/201/about  
-- https://www.doc.gold.ac.uk/usr/201/contact  
-- https://www.doc.gold.ac.uk/usr/201/help  
-- https://www.doc.gold.ac.uk/usr/201/welcome/:name  
-  - Example: https://www.doc.gold.ac.uk/usr/201/welcome/Victor
-- https://www.doc.gold.ac.uk/usr/201/chain  
-- https://www.doc.gold.ac.uk/usr/201/file
+* **Node.js**: The JavaScript runtime environment.
+* [cite_start]**Express.js**: The web framework used for the server and routing[cite: 213, 231].
+* **`path` (Node.js module)**: Used to construct an absolute file path for serving `a.html`.
 
-Local equivalents (when running locally on port 8000)
-- http://localhost:8000/  
-- http://localhost:8000/about  
-- http://localhost:8000/contact  
-- http://localhost:8000/help  
-- http://localhost:8000/welcome/:name  (e.g. /welcome/Victor)  
-- http://localhost:8000/chain  
-- http://localhost:8000/file
+## How to Install and Run Locally
 
-How to install and run (Windows) — clone from GitHub and run
-1. Clone the repository:
-   git clone https://github.com/Vnturo/04_express_33828139.git
-2. Change into the project directory:
-   cd 04_express_33828139
-3. Install dependencies:
-   npm install
-4. Start the server:
-   node index.js
-5. Open a browser and visit:
-   http://localhost:8000
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/Vnturo/04_express_33828139.git](https://github.com/Vnturo/04_express_33828139.git)
+    ```
+2.  **Navigate to the project directory:**
+    ```bash
+    cd 04_express_33828139
+    ```
+3.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+4.  **Start the server:**
+    ```bash
+    node index.js
+    ```
+5.  **View in browser:**
+    [cite_start]The server will be running at `http://localhost:8000`[cite: 260].
 
+## Available Routes
 
-Technologies used
-- Node.js — runtime
-- Express.js — web framework
-- Node built-in module: path — used to build the absolute path for res.sendFile
-- HTML — static file (`a.html`) served by `/file`
+The application is deployed on the university VM and is accessible at the base URL:
+[cite_start]**`https://doc.gold.ac.uk/usr/201/`** [cite: 185, 423]
 
-Notes
-- The parameter route `/welcome/:name` uses `req.params.name`. Replace `:name` with the name you want to display.
-- The `/chain` route demonstrates chaining: the first handler calls `next()` and the second sends the response.
-- The `/file` route uses `res.sendFile(path.join(__dirname, 'a.html'))` so `a.html` must remain in the project root unless you change the path.
-- If you want, I can add a `package.json` start script or change the app to serve static files from a `public/` folder.
+The following routes are available:
+
+| Route | Method | Description |
+| :--- | :--- | :--- |
+| `/` | `GET` | Displays the "Hello World!" home page. |
+| `/about` | `GET` | Displays the "About" page. |
+| `/contact` | `GET` | Displays the "Contact" page. |
+| `/date` | `GET` | Displays the current date and time. |
+| `/welcome/:name` | `GET` | (Extension Task) Displays a welcome message with the provided name. (e.g., `/welcome/Victor`) |
+| `/chain` | `GET` | (Extension Task) Demonstrates a chained route handler using `next()`. |
+| `/file` | `GET` | (Extension Task) Serves the static `a.html` file using `res.sendFile()`. |
+
+## Project Structure
+
+* `index.js`: The main server file. [cite_start]It imports Express, sets the port (8000), loads the routes, and starts the server [cite: 341-351].
+* [cite_start]`routes/main.js`: Contains all the Express route handlers (e.g., `router.get(...)`) [cite: 327-337]. [cite_start]This file is imported by `index.js`[cite: 347].
+* [cite_start]`a.html`: A static HTML file served by the `/file` route[cite: 362].
+* [cite_start]`package.json`: Lists project dependencies (like Express)[cite: 237].
+* [cite_start]`.gitignore`: Instructs Git to ignore the `node_modules` folder, as per lab instructions [cite: 381-382].
