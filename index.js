@@ -1,7 +1,7 @@
 // Set up express
 const express = require("express"); // Import express module
 const app = express(); // Create an express application
-const port = 8080;  // Define the port number
+const port = 8000;  // Define the port number
 
 // Handle the routes
 const mainRoutes = require("./main"); // Import routes from main.js
