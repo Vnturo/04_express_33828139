@@ -16,6 +16,13 @@ router.get("/welcome/:name", (req, res) => {
     res.send(`<h1>Welcome, ${name}!</h1>`); // Send a personalized welcome message
 });
 
+// Date Route (Lab 4, Task 7)
+router.get("/date", (req, res) => {
+    const today = new Date();
+    res.send(`<h1>Today's date is: ${today.toLocaleString()}</h1>`);
+});
+
+// Chain Route (Lab 4, Task 8)
 router.get("/chain",
     (req, res, next) => {
         req.chainMessage = "First handler executed. ";
@@ -25,7 +32,7 @@ router.get("/chain",
         res.send(`<h1>${req.chainMessage}Second handler responding.</h1>`); // Send the accumulated message
     }
 );
-
+// File Route (Lab 4, Task 9)
 router.get("/file", (req, res) => {
     res.sendFile(path.join(__dirname, "a.html")); // Send the a.html file as a response
 });
