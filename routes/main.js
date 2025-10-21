@@ -34,7 +34,7 @@ router.get("/chain",
 );
 // File Route (Lab 4, Task 9)
 router.get("/file", (req, res) => {
-    res.sendFile(path.join(__dirname, "a.html")); // Send the a.html file as a response
+    res.sendFile(path.join(__dirname, "../a.html")); // Send the a.html file as a response
 });
 
 // Export the router object so index.js can access it

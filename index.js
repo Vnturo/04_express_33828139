@@ -4,7 +4,7 @@ const app = express(); // Create an express application
 const port = 8000;  // Define the port number
 
 // Handle the routes
-const mainRoutes = require("./main"); // Import routes from main.js
+const mainRoutes = require("./routes/main"); // Import routes from main.js
 app.use("/", mainRoutes); // Use the imported routes for the root path
 
 // Start listening for HTTP requests
